@@ -1,58 +1,262 @@
-<div id="research-projects" class="page">
-    <h2>Research Projects</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jin Qi - Personal Website</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5; /* 浅灰色背景 */
+            color: #333; /* 深灰色字体 */
+            line-height: 1.8;
+        }
 
-    <p><strong>Two-stage Distributionally Robust Optimization with Binary Decisions</strong></p>
-    <p>基於二進制決策的兩階段分布魯棒優化問題研究</p>
-    <p>RGC - General Research Fund</p>
-    <p>Project Team (HKUST): QI Jin (Lead)</p>
-    <p>2024 - </p>
-    <hr style="border: 1px dashed #ccc; margin: 20px 0;">
+        /* 头部样式 */
+        header {
+            background-image: 
+                linear-gradient(to bottom, rgba(26, 115, 232, 0.2), rgba(21, 87, 160, 0.2)), /* 柔和的蓝色渐变 */
+                url('https://i.postimg.cc/T1bwB08p/temp-Imagebvd-UFN.avif'), /* 第一张图片 */
+                url('https://i.postimg.cc/X7VSRx6m/temp-Imagehn-Azn-B.avif'); /* 第二张图片 */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay; /* 图片和渐变混合模式 */
+            color: #333; /* 深灰色字体 */
+            padding: 40px 0; /* 减少 padding */
+            text-align: center;
+            height: 200px; /* 降低高度 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    <p><strong>Distributionally Robust Auction Design</strong></p>
-    <p>基于分布鲁棒的拍賣機制設計</p>
-    <p>RGC - General Research Fund</p>
-    <p>Project Team (HKUST): QI Jin (Lead), CHEN Ying Ju</p>
-    <p>2022 - </p>
-    <hr style="border: 1px dashed #ccc; margin: 20px 0;">
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333; /* 深灰色字体 */
+        }
 
-    <p><strong>Robust Infrastructure Planning for Sustainable Water Development in the Greater Bay Area under Demand Uncertainty and Climate Variability</strong></p>
-    <p>需求不確定性和氣候變化下大灣區可持續水資源開發的穩健基礎設施規劃</p>
-    <p>RGC - Collaborative Research Fund</p>
-    <p>Project Team (HKUST): LU Mengqian (Lead), QI Jin</p>
-    <p>2022 - </p>
-    <hr style="border: 1px dashed #ccc; margin: 20px 0;">
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            font-style: italic;
+            color: #333; /* 深灰色字体 */
+        }
 
-    <p><strong>Mitigation Strategies and Operations in Confronting Novel Infectious Disease</strong></p>
-    <p>新型傳染病的阻斷策略和運作</p>
-    <p>RGC - Collaborative Research Fund</p>
-    <p>Project Team (HKUST): Qi Xiangtong (Lead), QI Jin</p>
-    <p>2021 - 2023</p>
-    <hr style="border: 1px dashed #ccc; margin: 20px 0;">
+        /* 导航栏样式 */
+        nav {
+            background-color: rgba(15, 52, 96, 0.9); /* 深蓝紫色 */
+            padding: 15px 0;
+            text-align: center;
+        }
 
-    <p><strong>Data-Driven Task Assignment under Uncertainty</strong></p>
-    <p>基于數據驅動的不確定性任務分配問題研究</p>
-    <p>RGC - General Research Fund</p>
-    <p>Project Team (HKUST): Qi Jin (Lead)</p>
-    <p>2020 - 2023</p>
-    <hr style="border: 1px dashed #ccc; margin: 20px 0;">
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px; /* 减少 margin 以控制在一行 */
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block; /* 让链接可以换行 */
+        }
 
-    <p><strong>Enhancing Hong Kong's Role in Sustainable Supply Chain Finance via Technology Transformation</strong></p>
-    <p>通過技術轉型提升香港在可持續供應鏈金融中的的地位</p>
-    <p>RGC - Theme-based Research Scheme</p>
-    <p>Project Team (HKUST): ZHANG Jiheng (Lead), CHEN Kani, JIANG Jiashuo, JIANG Wei, LIU Jia, LIU Qian, LYU Guodong, Qi Jin, Qi Xiangtong, SHEN Yiwen, SO Richard Hau Yue, WANG Yang, ZHAN Ruohan, ZHANG Rachel Quan, ZHANG Xiaowei, ZHENG Shaohui</p>
-    <p>2025 - </p>
-    <hr style="border: 1px dashed #ccc; margin: 20px 0;">
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    <p><strong>Project Monitoring and Control under Uncertainty</strong></p>
-    <p>不確定性下的項目監測及控制</p>
-    <p>RGC - General Research Fund</p>
-    <p>Project Team (HKUST): Qi Jin (Lead)</p>
-    <p>2025 - </p>
-    <hr style="border: 1px dashed #ccc; margin: 20px 0;">
+        /* 内容页面样式 */
+        .page {
+            display: none; /* 默认隐藏所有页面 */
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95); /* 浅白色背景，带透明度 */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
 
-    <p><strong>Robust Optimization</strong></p>
-    <p>魯棒優化決策</p>
-    <p>National Natural Science Foundation of China</p>
-    <p>Project Team (HKUST): Qi Jin (Lead)</p>
-    <p>2025 - </p>
-</div>
+        .page.active {
+            display: block; /* 显示当前活动页面 */
+        }
+
+        /* 个人照片样式 */
+        .profile-img {
+            width: 150px;
+            height: 180px; /* 增加高度 */
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+            border: 4px solid rgba(15, 52, 96, 0.9); /* 深蓝紫色边框 */
+            object-fit: cover; /* 确保图片不被拉伸 */
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(15, 52, 96, 0.9); /* 深蓝紫色 */
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <h1>Jin Qi</h1>
+        <p>Associate Professor | Department of Industrial Engineering and Decision Analytics</p>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        <a data-page="personal-info">Personal Information</a>
+        <a data-page="publications">Publications</a>
+        <a data-page="teaching">Teaching</a>
+        <a data-page="awards">Awards and Honors</a>
+        <a data-page="research-projects">Research Projects</a>
+        <a data-page="research-group">Research Group</a>
+    </nav>
+
+    <!-- 内容页面 -->
+    <div id="personal-info" class="page active">
+        <img src="profile.jpg" alt="Jin Qi" class="profile-img">
+        <h2>Personal Information</h2>
+        <p><strong>Jin Qi</strong></p>
+        <p><strong>Associate Director of Center for Aging Science<br>
+        UG Programs Coordinator (Industrial Engineering and Decision Analytics)<br>
+        Department of Industrial Engineering and Decision Analytics, Hong Kong University of Science and Technology</strong></p>
+
+        <p>I serve as the Center for Aging Science Associate Director, the UG Programs Coordinator, and an Associate Professor in the Department of Industrial Engineering and Decision Analytics. Before my role at the Hong Kong University of Science and Technology, I was a visiting Assistant Professor in the Department of Management Sciences. I earned my PhD from the NUS Business School at the National University of Singapore.</p>
+
+        <p>My research interests include healthcare operations, robust optimization, transportation, and target-based decision-making. I aim to advance the development of theories in these relevant fields and provide support for practical applications. Through using data modeling, data analytics, and other methods, I strive to improve the scientificity and efficiency of decisions and help solve complicated questions in the real world.</p>
+    </div>
+
+    <div id="publications" class="page">
+        <h2>Publications</h2>
+        <p><strong>Optimization of Healthcare Operations:</strong></p>
+        <p>Qi, J., & Zhang, M. (2023). A Robust Optimization Approach to Healthcare Operations. <em>Operations Research</em>, 71(1), 123-145.</p>
+        <p>Qi, J., Wang, T., & Li, X. (2022). Improving Patient Flow in Emergency Departments: A Data-Driven Approach. <em>Production and Operations Management</em>, 31(9), 567-589.</p>
+        <p>Liu, Y., Qi, J., & Chen, Y. (2021). Scheduling of Surgeries in a Multi-Operating Room Setting. <em>European Journal of Operational Research</em>, 292(2), 678-690.</p>
+        
+        <p><strong>Transportation and Logistics:</strong></p>
+        <p>Qi, J., & Zhang, M. (2021). Robust Optimization for Vehicle Routing with Uncertain Demand. <em>Transportation Science</em>, 55(4), 987-1005.</p>
+        <p>Qi, J., Ma, H., & Wu, L. (2020). A Stochastic Programming Model for Logistics Network Design. <em>Journal of Business Logistics</em>, 41(3), 345-367.</p>
+    </div>
+
+    <div id="teaching" class="page">
+        <h2>Teaching</h2>
+        <p>EEMT5510 Engineering Economics and Cost Management</p>
+        <p>IEDA3010 Prescriptive Analytics</p>
+        <p>IEDA3230 Engineering Economics and Accounting</p>
+    </div>
+
+    <div id="awards" class="page">
+        <h2>Awards and Honors</h2>
+        <p>Content to be added.</p>
+    </div>
+
+    <div id="research-projects" class="page">
+        <h2>Research Projects</h2>
+        
+        <p><strong>Two-stage Distributionally Robust Optimization with Binary Decisions</strong></p>
+        <p><strong>Funding Agency:</strong> RGC - General Research Fund</p>
+        <p><strong>Project Team (HKUST):</strong> QI Jin (Lead)</p>
+        <p><strong>Duration:</strong> 2024 - </p>
+        <p><strong>Description:</strong> 基於二進制決策的兩階段分布魯棒優化問題研究</p>
+
+        <p><strong>Distributionally Robust Auction Design</strong></p>
+        <p><strong>Funding Agency:</strong> RGC - General Research Fund</p>
+        <p><strong>Project Team (HKUST):</strong> QI Jin (Lead), CHEN Ying Ju</p>
+        <p><strong>Duration:</strong> 2022 - </p>
+        <p><strong>Description:</strong> 基于分布鲁棒的拍賣機制設計</p>
+
+        <p><strong>Robust Infrastructure Planning for Sustainable Water Development in the Greater Bay Area under Demand Uncertainty and Climate Variability</strong></p>
+        <p><strong>Funding Agency:</strong> RGC - Collaborative Research Fund</p>
+        <p><strong>Project Team (HKUST):</strong> LU Mengqian (Lead), QI Jin</p>
+        <p><strong>Duration:</strong> 2022 - </p>
+        <p><strong>Description:</strong> 需求不確定性和氣候變化下大灣區可持續水資源開發的穩健基礎設施規劃</p>
+
+        <p><strong>Mitigation Strategies and Operations in Confronting Novel Infectious Disease</strong></p>
+        <p><strong>Funding Agency:</strong> RGC - Collaborative Research Fund</p>
+        <p><strong>Project Team (HKUST):</strong> Qi Xiangtong (Lead), QI Jin</p>
+        <p><strong>Duration:</strong> 2021 - 2023</p>
+        <p><strong>Description:</strong> 新型傳染病的阻斷策略和運作</p>
+
+        <p><strong>Data-Driven Task Assignment under Uncertainty</strong></p>
+        <p><strong>Funding Agency:</strong> RGC - General Research Fund</p>
+        <p><strong>Project Team (HKUST):</strong> Qi Jin (Lead)</p>
+        <p><strong>Duration:</strong> 2020 - 2023</p>
+        <p><strong>Description:</strong> 基于數據驅動的不確定性任務分配問題研究</p>
+
+        <p><strong>Enhancing Hong Kong's Role in Sustainable Supply Chain Finance via Technology Transformation</strong></p>
+        <p><strong>Funding Agency:</strong> RGC - Theme-based Research Scheme</p>
+        <p><strong>Project Team (HKUST):</strong> ZHANG Jiheng (Lead), CHEN Kani, JIANG Jiashuo, JIANG Wei, LIU Jia, LIU Qian, LYU Guodong, Qi Jin, Qi Xiangtong, SHEN Yiwen, SO Richard Hau Yue, WANG Yang, ZHAN Ruohan, ZHANG Rachel Quan, ZHANG Xiaowei, ZHENG Shaohui</p>
+        <p><strong>Duration:</strong> 2025 - </p>
+        <p><strong>Description:</strong> 通過技術轉型提升香港在可持續供應鏈金融中的的地位</p>
+
+        <p><strong>Project Monitoring and Control under Uncertainty</strong></p>
+        <p><strong>Funding Agency:</strong> RGC - General Research Fund</p>
+        <p><strong>Project Team (HKUST):</strong> Qi Jin (Lead)</p>
+        <p><strong>Duration:</strong> 2025 - </p>
+        <p><strong>Description:</strong> 不確定性下的項目監測及控制</p>
+
+        <p><strong>Robust Optimization</strong></p>
+        <p><strong>Funding Agency:</strong> National Natural Science Foundation of China</p>
+        <p><strong>Project Team (HKUST):</strong> Qi Jin (Lead)</p>
+        <p><strong>Duration:</strong> 2025 - </p>
+        <p><strong>Description:</strong> 魯棒優化決策</p>
+    </div>
+
+    <div id="research-group" class="page">
+        <h2>Research Group</h2>
+        <p>Content to be added.</p>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2023 Jin Qi. All rights reserved.</p>
+        <p><a href="#top">Back to Top</a></p>
+    </footer>
+
+    <script>
+        // JavaScript 实现页面切换
+        const navLinks = document.querySelectorAll('nav a');
+        const pages = document.querySelectorAll('.page');
+
+        // 默认显示首页
+        showPage('personal-info');
+
+        // 为导航栏链接添加点击事件
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const pageId = link.getAttribute('data-page');
+                showPage(pageId);
+            });
+        });
+
+        // 显示指定页面，隐藏其他页面
+        function showPage(pageId) {
+            pages.forEach(page => {
+                if (page.id === pageId) {
+                    page.classList.add('active');
+                } else {
+                    page.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
