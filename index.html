@@ -17,4 +17,176 @@
 
         /* 头部样式 */
         header {
-            background-color: rgba(26, 115
+            background-color: rgba(26, 115, 232, 0.9); /* 半透明蓝色 */
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: rgba(21, 87, 160, 0.9); /* 半透明深蓝色 */
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* 内容页面样式 */
+        .page {
+            display: none; /* 默认隐藏所有页面 */
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* 半透明白色 */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .page.active {
+            display: block; /* 显示当前活动页面 */
+        }
+
+        /* 个人照片样式 */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+            border: 4px solid #1a73e8;
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(21, 87, 160, 0.9); /* 半透明深蓝色 */
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <h1>Jin Qi</h1>
+        <p>Associate Professor | Department of Industrial Engineering and Decision Analytics</p>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        <a data-page="personal-info">Personal Information</a>
+        <a data-page="publications">Publications</a>
+        <a data-page="teaching">Teaching</a>
+        <a data-page="awards">Awards and Honors</a>
+        <a data-page="grants">Research Projects Grant</a>
+        <a data-page="research-group">Research Group</a>
+    </nav>
+
+    <!-- 内容页面 -->
+    <div id="personal-info" class="page active">
+        <img src="profile.jpg" alt="Jin Qi" class="profile-img">
+        <h2>Personal Information</h2>
+        <p><strong>Name:</strong> Jin Qi</p>
+        <p><strong>Position:</strong> Assocate Director of Center for Aging Science</p>
+        <p><strong>Role:</strong> UG Programs Coordinator (Industrial Engineering and Decision Analytics)</p>
+        <p><strong>Affiliation:</strong> Department of Industrial Engineering and Decision Analytics, Hong Kong University of Science and Technology</p>
+        <h2>Academic Background</h2>
+        <p>I serve as the Center for Aging Science Associate Director, the UG Programs Coordinator, and an Assocate Professor in the Department of Industrial Engineering and Decision Analytics. Before my role at the Hong Kong University of Science and Technology, I was a visiting Assistant Professor in the Department of Management Sciences. I earned my PhD from the NUS Business School at the National University of Singapore.</p>
+        <h2>Research Information</h2>
+        <p>My research interests include healthcare operations, robust optimization, transportation, and target-based decision-making. I aim to advance the development of theories in these relevant fields and provide support for practical applications. Through using data modeling, data analytics, and other methods, I strive to improve the scientificity and efficiency of decisions and help solve complicated questions in the real world.</p>
+    </div>
+
+    <div id="publications" class="page">
+        <h2>Publications</h2>
+        <p>Content to be added.</p>
+    </div>
+
+    <div id="teaching" class="page">
+        <h2>Teaching</h2>
+        <p>Content to be added.</p>
+    </div>
+
+    <div id="awards" class="page">
+        <h2>Awards and Honors</h2>
+        <p>Content to be added.</p>
+    </div>
+
+    <div id="grants" class="page">
+        <h2>Research Projects Grant</h2>
+        <p>Content to be added.</p>
+    </div>
+
+    <div id="research-group" class="page">
+        <h2>Research Group</h2>
+        <p>Content to be added.</p>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2023 Jin Qi. All rights reserved.</p>
+        <p><a href="#top">Back to Top</a></p>
+    </footer>
+
+    <script>
+        // JavaScript 实现页面切换
+        const navLinks = document.querySelectorAll('nav a');
+        const pages = document.querySelectorAll('.page');
+
+        // 默认显示首页
+        showPage('personal-info');
+
+        // 为导航栏链接添加点击事件
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const pageId = link.getAttribute('data-page');
+                showPage(pageId);
+            });
+        });
+
+        // 显示指定页面，隐藏其他页面
+        function showPage(pageId) {
+            pages.forEach(page => {
+                if (page.id === pageId) {
+                    page.classList.add('active');
+                } else {
+                    page.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
